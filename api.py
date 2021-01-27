@@ -7,9 +7,14 @@ __version__ = "1.0.0"
 
 
 class CLIP:
-    def load(self, f_latents="data/img_latents.npy", f_keys="data/img_keys.csv"):
-        # Load the pre-computed unsplash latent codes
-        self.V = np.load(f_latents)
+    def load(self, f_keys="data/img_keys.csv"):
+
+        # Haha github won't let me save files larger than 100MB
+        self.V = np.vstack([
+            np.load('data/latents0.npy'),
+            np.load('data/latents1.npy'),
+        ])
+        
         self.V /= np.linalg.norm(self.V, ord=2, axis=-1, keepdims=True)
 
         # Load the mapping of the latent codes to the IDs
@@ -45,5 +50,5 @@ if __name__ == "__main__":
 
     client = TestClient(app)
 
-    r = client.get("/top_match", params={"i": 17, "top_k": 2})
+    r = client.get("/top_match", params={"i": 17, "top_k": 15})
     print(r.json())

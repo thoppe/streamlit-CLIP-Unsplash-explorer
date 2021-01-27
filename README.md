@@ -3,10 +3,11 @@ _Small project to explore the image embeddings of [CLIP](https://github.com/open
 
 See if live!
 
-    https://github.com/thoppe/streamlit-CLIP-Unsplash-explorer
+https://share.streamlit.io/thoppe/streamlit-clip-unsplash-explorer
 
-or install the `requirements.txt` and run
+or `pip install -r requirements.txt` and run
 
     streamlit run streamlit_app.py
 
-Any missing photos or 404s existed at the time of creation. All photo credits can be found by clicking on the image.
+All photo credits can be found by clicking on the image.
+Any missing photos or 404s existed at the time of creation.
