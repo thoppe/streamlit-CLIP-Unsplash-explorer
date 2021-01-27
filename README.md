@@ -1,7 +1,7 @@
 # Unsplash+CLIP image similarity
 _Small project to explore the image embeddings of [CLIP](https://github.com/openai/CLIP) image similarity using [Unsplash](https://unsplash.com/) and [Streamlit](streamlit.io)_
 
-See if live!
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/thoppe/streamlit-clip-unsplash-explorer)
 
 https://share.streamlit.io/thoppe/streamlit-clip-unsplash-explorer
 
