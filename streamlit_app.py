@@ -35,15 +35,20 @@ vector_idx = int(random_sample.index.values[0])
 target_unsplash_id = random_sample.values[0]
 
 url = f"https://unsplash.com/photos/{target_unsplash_id}"
-title = f"CLIP+Unsplash image similarity [{target_unsplash_id}]({url})"
+title = f"CLIP+Unsplash image similarity"
+info = '''
+Explore the latent image space of CLIP via top 100K Unsplash photos.
+Made with 💙 by [@metasemantic](https://twitter.com/metasemantic?lang=en) 
+[[github](https://github.com/thoppe/streamlit-CLIP-Unsplash-explorer)]
+'''.strip()
 title_element.title(title)
+info_element.write(info)
 
 url = "http://localhost:8000/top_match"
 r = requests.get(url, params={"i": vector_idx, "top_k": top_k})
 matching_ids = r.json()
 
-# Try this!
-# CSS Masonry
+# Uses CSS Masonry from 
 # https://w3bits.com/labs/css-masonry/
 
 unsplash_links = [target_unsplash_id,] + matching_ids
@@ -86,4 +91,4 @@ html = """
     divs,
 )
 
-st.components.v1.html(html, height=1200, scrolling=True)
+st.components.v1.html(html, height=2400, scrolling=True)
